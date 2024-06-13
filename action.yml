@@ -218,7 +218,8 @@ runs:
         mkdir -p "$CLI_PROFILE/Contents/geode/mods"
         geode profile add --name GithubActions "$CLI_PROFILE/GeometryDash.exe" win
 
-        geode sdk install "${{ github.workspace }}/geode-sdk-clone"
+        echo "ugly hack !!!"
+        git clone -b ios https://github.com/FireMario211/geode "${{ github.workspace }}/geode-sdk-clone"
 
         # silly github actions wont refresh the env
         export GEODE_SDK="${{ github.workspace }}/geode-sdk-clone"
